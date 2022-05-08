@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+
+</head>
+
+<body>
+
+<img
+src="logo.png"
+style="
+	position:fixed;
+	top:0;
+	left:0;
+	width:100vw;
+	height:100vh;
+"
+>
+
+</body>
+</html>

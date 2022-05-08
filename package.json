@@ -1,0 +1,33 @@
+{
+  "name": "desktop-sonic",
+  "productName": "Desktop Sonic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "electron ."
+  },
+  "author": "Gvbvdxx",
+  "license": "ISC",
+  "dependencies": {
+    "@electron/remote": "^2.0.8",
+    "electron-prompt": "^1.7.0",
+    "electron-remote": "^1.3.0"
+  },
+  "devDependencies": {
+    "electron-builder": "^23.0.3",
+	"electron": "^18.2.0"
+  },
+  "build":{
+	"nsis": {
+	  "deleteAppDataOnUninstall": true,
+	  "uninstallDisplayName": "app"
+	},
+	"win": {
+	  "asar":false,
+	  "target": [
+		 "nsis"
+	  ]
+	}
+  }
+}

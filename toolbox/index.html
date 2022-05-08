@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+
+</head>
+<body>
+
+<div
+id="objectSelect"
+style="
+	position:fixed;
+	top:0;
+	right:0;
+	width:300px;
+	height:400px;
+	background-color:#868e96;
+	overflow:auto;
+	z-index:10000000000;
+"
+class="electronFixes"
+>
+<button class="electronFixes" width=32 height=30 onclick="summonObject(document.getElementById('color').value,document.getElementById('danger').checked,document.getElementById('pushable').checked,document.getElementById('type').value)" style="z-index:1000;">Summon a object</button>
+<br><br><input type="color" value="#868e96" id="color"><br><br>
+<label for="danger" class="electronFixes">Kill player on touch?:</label><input class="electronFixes" type="checkbox" id="danger">
+<br><br>
+<label for="pushable" class="electronFixes">Is Pushable?:</label><input class="electronFixes" type="checkbox" id="pushable"><br><br>
+<label for="type" class="electronFixes">Type:</label><select id="type" class="electronFixes">
+<option value="">None</option>
+<option value="movingHOR">Horizontal Moving Platform</option>
+<option value="movingVER">Vertical Moving Platform</option>
+<option value="ring">Ring</option>
+</select>
+</div>
+
+</body>
+</html>
