@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+.flip {
+	transform: scaleX(-1);
+}
+}
+
+#context-menu {
+  position: fixed;
+  z-index: 10000;
+  width: 150px;
+  background: #1b1a1a;
+  border-radius: 5px;
+}
+
+#context-menu .item {
+  padding: 8px 10px;
+  font-size: 15px;
+  color: #eee;
+  cursor: pointer
+}
+
+#context-menu .item:hover {
+  background: #343434;
+  cursor:pointer;
+  border-radius: 5px;
+}
+#context-menu {
+  position: fixed;
+  z-index: 10000;
+  width: 150px;
+  background: #1b1a1a;
+  border-radius: 5px;
+}
+.electronFixes {
+	outline:none;
+}
+.minusplusbutton {
+	background:none;
+	border:none;
+	height:30px;
+	font-size:20px;
+	color:white;
+	font-weight:bold;
+}
+.minusplusbutton:hover {
+	cursor:pointer;
+	color:grey;
+}
+.objectselecttitle {
+	background:none;
+	border:none;
+	height:30px;
+	font-size:20px;
+	color:white;
+	font-weight:bold;
+	cursor:move;
+}
+</style>
+<title></title>
+</head>
+<body
+style="
+	font-family:arial;
+"> 
+<img id="background" class="electronFixes" draggable=false>
+<div id="context-menu" class="electronFixes" hidden>
+<div class="item" value="delete" onclick="closeCustContextMenu(this);" class="electronFixes">Delete object</div>
+<div class="item" value="deleteAll" onclick="closeCustContextMenu(this);" class="electronFixes">Delete all objects</div>
+<div class="item" onclick="closeCustContextMenu(this);" value="color" class="electronFixes">Get Color From Object</div>
+</div>
+<div id="playerHitbox" style="width:32px; height:40px;z-index:1000000;" class="electronFixes"></div>
+<img id="player" style="z-index:10;" class="electronFixes">
+
+<div id="objectSelect" style="
+		position:fixed;
+		top:30px;
+		right:0;
+		width:300px;
+		height:0px;
+		z-index:10000000000;">
+	<div id="objectSelectheader" style="
+	width:300px;
+	height:30px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	background-color:#4dabf7;
+	cursor:move;
+	"><button id="minmizeObjectSelectWin" class="minusplusbutton">-</button><button class="objectselecttitle">Object Properties</button></div>
+	<div
+	id="objectSelectMain"
+	style="
+		width:300px;
+		height:400px;
+		background-color:#868e96;
+		overflow:auto;
+		z-index:10000000000;
+		border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 10px;
+		resize:vertical;
+	"
+	class="electronFixes"
+	>
+		<button class="electronFixes" width=32 height=30 onclick="summonObject(document.getElementById('color').value,document.getElementById('danger').checked,document.getElementById('pushable').checked,document.getElementById('type').value,document.getElementById('hasGravity').checked)" style="z-index:1000;">Summon a object</button>
+		<br><br><input type="color" value="#868e96" id="color"><br><br>
+		<label for="danger" class="electronFixes">Kill player on touch?:</label><input class="electronFixes" type="checkbox" id="danger">
+		<br><br>
+		<label for="pushable" class="electronFixes">Is Pushable?:</label><input class="electronFixes" type="checkbox" id="pushable"><br><br>
+		<label for="hasGravity" class="electronFixes">Has Gravity?:</label><input class="electronFixes" type="checkbox" id="hasGravity"><br><br>
+		<label for="type" class="electronFixes">Type:</label><select id="type" class="electronFixes">
+		<option value="">None</option>
+		<option value="movingHOR">Horizontal Moving Platform</option>
+		<option value="movingVER">Vertical Moving Platform</option>
+		<option value="ring">Ring</option>
+		</select>
+	</div>
+</div>
+
+
+
+
+
+
+<!--<iframe src="https://jasonglenevans.github.io/GvbvdxxChat/" style="z-index:1000;border:none;position:fixed;right:0;top:0;" width=360 height=360></iframe>-->
+<div id="objects">
+
+
+</div>
+<div id="floor" style="width:100%;height:32px;bottom:0;left:0;background-color:green;position:fixed;" class="electronFixes"></div>
+<script src="player.js?n=1"></script>
+<script src="objects.js?n=1"></script>
+<script src="save.js?n=1"></script>
+<script>
+document.body.addEventListener("keydown", function (event) {
+	playerInputs[event.key] = true;
+})
+document.body.addEventListener("keyup", function (event) {
+	playerInputs[event.key] = false;
+})
+</script>
+</body>
+</html>
